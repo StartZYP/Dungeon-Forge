@@ -5,13 +5,15 @@ MsgConfig:
   InDungeon: §c§l您正在副本。正在检测副本停留时间[InTime]
   LeaveMsg: §c§l您退出了副本。已从副本计时队列中踢出
   EnterMsg: §c§成功进入副本[DungeonName],当前已进次数[DungeonNum],
-  InfoMsg: §c§l玩家世界[WorldName],您还有[HaveNum]次
+  InfoMsg: §c§l玩家世界[DungeonName],您还有[HaveNum]次
 Dungeon:
   world1:
+    aliasName: "§e§l副本"
     WaitingTime: 5
     Num: 3
     Level: 4
   world4:
+    aliasName: "§e§l副本"
     WaitingTime: 5
     Num: 5
     Level: 4

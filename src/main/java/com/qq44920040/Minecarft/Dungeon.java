@@ -39,8 +39,9 @@ public class Dungeon extends JavaPlugin {
             String num = getConfig().getString("Dungeon."+WorldName+".Num");
             String  waiting=getConfig().getString("Dungeon."+WorldName+".WaitingTime");
             String Level = getConfig().getString("Dungeon."+WorldName+".Level");
+            String aliasName = getConfig().getString("Dungeon."+WorldName+".aliasName");
             System.out.println(num+"\n"+waiting+"\n"+Level+"\n");
-            Worlds.add(new DungeonWorld(WorldName,num,waiting,Level));
+            Worlds.add(new DungeonWorld(WorldName,num,waiting,Level,aliasName));
         }
         PlayerLevelinsufficient = getConfig().getString("MsgConfig.PlayerLevelinsufficient");
         PlayerNotNum = getConfig().getString("MsgConfig.PlayerNotNum");
@@ -74,7 +75,7 @@ public class Dungeon extends JavaPlugin {
                         }
                     }
                     int EnterNum = DBUtile.GetSqliteData(((Player) sender).getUniqueId(),dw.getWorldName());
-                    sender.sendMessage(InfoMsg.replace("[WorldName]",dw.getWorldName()).replace("[HaveNum]",String.valueOf(EnterMaxNum-EnterNum)));
+                    sender.sendMessage(InfoMsg.replace("[DungeonName]",dw.getAliasname()).replace("[HaveNum]",String.valueOf(EnterMaxNum-EnterNum)));
                 }
             }
             if(args.length==1&&args[0].equalsIgnoreCase("reload")){
@@ -92,8 +93,9 @@ public class Dungeon extends JavaPlugin {
                     String num = getConfig().getString("Dungeon."+WorldName+".Num");
                     String  waiting=getConfig().getString("Dungeon."+WorldName+".WaitingTime");
                     String Level = getConfig().getString("Dungeon."+WorldName+".Level");
+                    String aliasname = getConfig().getString("Dungeon."+WorldName+".aliasName");
                     System.out.println(num+"\n"+waiting+"\n"+Level+"\n");
-                    Worlds.add(new DungeonWorld(WorldName,num,waiting,Level));
+                    Worlds.add(new DungeonWorld(WorldName,num,waiting,Level,aliasname));
                 }
                 PlayerLevelinsufficient = getConfig().getString("MsgConfig.PlayerLevelinsufficient");
                 PlayerNotNum = getConfig().getString("MsgConfig.PlayerNotNum");

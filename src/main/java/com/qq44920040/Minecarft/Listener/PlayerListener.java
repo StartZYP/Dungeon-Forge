@@ -69,7 +69,7 @@ public class PlayerListener implements Listener {
                         calendar.add(Calendar.MINUTE,Integer.parseInt(tempworld.getWorldWatingTime()));
                         Dungeon.PlayerDungeonTeamTime.put(p.getUniqueId(),calendar.getTime());
                         EnterNum++;
-                        String EnterMsg =Dungeon.EnterMsg.replace("[DungeonName]",tempworld.getWorldName()).replace("[DungeonNum]",String.valueOf(EnterNum));
+                        String EnterMsg =Dungeon.EnterMsg.replace("[DungeonName]",tempworld.getAliasname()).replace("[DungeonNum]",String.valueOf(EnterNum));
                         DBUtile.AddSQLiteData(PlayerUid,tempworld.getWorldName());
                         p.sendMessage(EnterMsg);
                     }
